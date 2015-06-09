@@ -18,8 +18,9 @@
 						</div>
 					@endif
 
-					<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+					<!-- <form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}"> -->
+					{!! Form::open(array('url' => '/auth/login', 'class' => 'form-horizontal', 'role' => 'form')) !!}
+						<!-- <input type="hidden" name="_token" value="{{ csrf_token() }}"> -->
 
 						<div class="form-group">
 							<label class="col-md-4 control-label">E-Mail Address</label>
@@ -52,7 +53,8 @@
 								<a class="btn btn-link" href="{{ url('/password/email') }}">Forgot Your Password?</a>
 							</div>
 						</div>
-					</form>
+					<!-- </form> -->
+					{!! Form::close() !!}
 				</div>
 			</div>
 		</div>
